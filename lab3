@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: time taken by sort1 in random order is maximum
+
+sort2 uses: merge sort
+
+How do you know?: time taken by sort2 in any order is unaffected
+
+sort3 uses: selection sort
+
+How do you know?: time taken by sort3 in sorted order is maximum
