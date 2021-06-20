@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                let correct_button = document.querySelectorAll(".correct");
+                let incorrect_button = document.querySelectorAll(".incorrect");
+                let messages = document.querySelectorAll(".message")
+
+                for(let i=0; i< correct_button.length; i++){
+                    correct_button[i].addEventListener("click", function(){
+                        correct_button[i].style.backgroundColor = "green";
+                        messages[i].innerHTML = "Correct";
+
+                    });
+                }
+                for(let i=0; i< incorrect_button.length; i++){
+                    incorrect_button[i].addEventListener("click", function(){
+                        incorrect_button[i].style.backgroundColor = "red";
+                        messages[i].innerHTML = "Incorrect";
+                    });
+                }
+            document.querySelector("#free").addEventListener("click", function(){
+                let input = document.querySelector("input");
+                if(input.value == "Bogota"){
+                    input.style.backgroundColor = "green";
+                    document.querySelector("#feedback").innerHTML = "Correct";
+                } else {
+                    input.style.backgroundColor = "red";
+                    document.querySelector("#feedback").innerHTML = "Incorrect";
+                }
+            });
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <h3>Q1. International literacy day is observed on :</h3>
+                <h4>
+                    <button class="correct">Sep 8</button>
+                    <button class="incorrect">Nov 28</button>
+                    <button class="incorrect">May 2</button>
+                    <button class="incorrect">Sep 22</button>
+                </h4>
+                <p class="message"></p>
+                <h3>Q2. Capital of France is :</h3>
+                <h4>
+                    <button class="incorrect">London </button>
+                    <button class="correct">Paris</button>
+                    <button class="incorrect">Moscow</button>
+                    <button class="incorrect">Berlin</button>
+                </h4>
+                <p class="message"></p>
+                <h3>Q3. World AIDs day is on :</h3>
+                <h4>
+                    <button class="incorrect">Sep 8</button>
+                    <button class="incorrect">Nov 28</button>
+                    <button class="correct">Dec 1</button>
+                    <button class="incorrect">Sep 1</button>
+                </h4>
+                <p class="message"></p>
+                <h3>Q4. Fastest animal in the world is :</h3>
+                <h4>
+                    <button class="incorrect">Horse</button>
+                    <button class="correct">Cheetah</button>
+                    <button class="incorrect">Tiger</button>
+                    <button class="incorrect">Deer</button>
+                </h4>
+                <p class="message"></p>
+                <h3>Q5. Largest mammal in the world is :</h3>
+                <h4>
+                    <button class="incorrect">Elephant</button>
+                    <button class="incorrect">Giraffe</button>
+                    <button class="correct">Whale</button>
+                    <button class="incorrect">Gorilla</button>
+                </h4>
+                <p class="message"></p>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <h3>Ques. What is the capital of Columbia? </h3>
+                <input type = "text">
+                <button id = "free">Submit</button>
+                <p id = "feedback"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
